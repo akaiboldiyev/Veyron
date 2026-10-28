@@ -13,9 +13,9 @@
     <AssemblyTitle>Veyron v1</AssemblyTitle>
     <Product>Veyron v1</Product>
     <Company>Veyron</Company>
-    <Version>1.0.5</Version>
-    <AssemblyVersion>1.0.5.0</AssemblyVersion>
-    <FileVersion>1.0.5.0</FileVersion>
+    <Version>1.0.6</Version>
+    <AssemblyVersion>1.0.6.0</AssemblyVersion>
+    <FileVersion>1.0.6.0</FileVersion>
     <RootNamespace>Cyclop.Windows</RootNamespace>
   </PropertyGroup>
   <ItemGroup>
