@@ -21,6 +21,12 @@ if (-not (Test-Path -LiteralPath $certificatePath)) {
 }
 
 try {
+    [System.Windows.Forms.MessageBox]::Show(
+        "Для установки пакета Windows попросит доверить сертификат Veyron только вашей учётной записи. В системном окне издателем будет указан Veyron, а отпечаток должен начинаться с $((Get-PfxCertificate -FilePath $certificatePath).Thumbprint.Substring(0, 8)). Нажимайте «Да» только если запускаете установщик из официального релиза Veyron на GitHub.",
+        'Подтверждение издателя Veyron', 'OK', 'Information'
+    ) | Out-Null
+
+    Import-Certificate -FilePath $certificatePath -CertStoreLocation Cert:\CurrentUser\Root | Out-Null
     Import-Certificate -FilePath $certificatePath -CertStoreLocation Cert:\CurrentUser\TrustedPeople | Out-Null
     Add-AppxPackage -Path $packagePath
 

@@ -8,9 +8,11 @@ try {
     $certificatePath = Join-Path $PSScriptRoot 'Veyron-v1.cer'
     if (Test-Path -LiteralPath $certificatePath) {
         $certificate = [System.Security.Cryptography.X509Certificates.X509Certificate2]::new($certificatePath)
-        Get-ChildItem Cert:\CurrentUser\TrustedPeople |
-            Where-Object Thumbprint -eq $certificate.Thumbprint |
-            Remove-Item -Force
+        foreach ($store in @('Cert:\CurrentUser\TrustedPeople','Cert:\CurrentUser\Root')) {
+            Get-ChildItem $store |
+                Where-Object Thumbprint -eq $certificate.Thumbprint |
+                Remove-Item -Force
+        }
         $certificate.Dispose()
     }
 
