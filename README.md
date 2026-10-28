@@ -1,5 +1,9 @@
 # Veyron v1
 
+## ⬇️ [Скачать Veyron v1 для Windows — установщик](https://github.com/akaiboldiyev/Veyron/releases/latest/download/Veyron-v1-Installer.zip)
+
+Эта ссылка загружает **один ZIP установщика**. Не выбирайте **Code → Download ZIP**: это архив исходников, не установщик.
+
 A Windows desktop panel based on the Cyclop project. Veyron opens from the top edge of the screen and stays in the notification area, ready when you need it.
 
 *English · [Русский](README.ru.md)*
