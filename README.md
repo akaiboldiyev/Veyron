@@ -18,8 +18,9 @@ Or open the [latest release page](https://github.com/akaiboldiyev/Veyron/release
 2. Right-click `Veyron-v1-Installer.zip`, choose **Extract All…**, then click **Extract**.
 3. Open the new `Veyron-v1-Installer` folder.
 4. Double-click **Install-Veyron.vbs**. Keep `Veyron-v1.msix` and `Veyron-v1.cer` in the same folder.
-5. The installer explains that Windows will ask you to trust Veyron as a publisher for your Windows account. Click **Yes** only when you downloaded the archive from the [official releases page](https://github.com/akaiboldiyev/Veyron/releases/latest).
-6. After the success message, launch Veyron from the **Start** menu. Its icon also appears in the notification area beside the clock.
+5. A PowerShell window opens while setup runs. Do not type anything; wait for the next message.
+6. The installer explains that Windows will ask you to trust Veyron as a publisher for your Windows account. Click **Yes** only when you downloaded the archive from the [official releases page](https://github.com/akaiboldiyev/Veyron/releases/latest).
+7. After the success message, launch Veyron from the **Start** menu. Its icon also appears in the notification area beside the clock.
 
 If Windows asks whether to run the script, choose **Open** or **Run**. If you see “Veyron-v1.msix is missing,” the ZIP was not extracted: repeat step 2 and run the script from the extracted folder.
 
