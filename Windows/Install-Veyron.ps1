@@ -1,4 +1,4 @@
-$ErrorActionPreference = 'Stop'
+﻿$ErrorActionPreference = 'Stop'
 Add-Type -AssemblyName System.Windows.Forms
 
 $packagePath = Join-Path $PSScriptRoot 'Veyron-v1.msix'
