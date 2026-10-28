@@ -1,0 +1,28 @@
+.build/
+build/
+**/bin/
+**/obj/
+.vs/
+*.user
+**/Cyclop-QA/
+.DS_Store
+*.xcodeproj
+*.xcworkspace
+.swiftpm/
+
+# Чтобы секрет не уехал в публичный репозиторий по случайности
+.env
+.env.*
+*.pem
+*.p12
+*.key
+*.mobileprovision
+*.certSigningRequest
+
+# Windows packages and local signing keys
+*.msix
+*.msixbundle
+*.pfx
+*.cer
+Windows/Cyclop-dev.pfx
+

@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <ProjectGuid>{8C2A66D4-7861-4A3D-B218-F9C3200EF065}</ProjectGuid>
+    <TargetFramework>net8.0-windows10.0.19041.0</TargetFramework>
+    <RuntimeIdentifier>win-x64</RuntimeIdentifier>
+    <SelfContained Condition="'$(CyclopTestReference)' != 'true'">true</SelfContained>
+    <UseWPF>true</UseWPF>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <AssemblyName>Veyron</AssemblyName>
+    <AssemblyTitle>Veyron v1</AssemblyTitle>
+    <Product>Veyron v1</Product>
+    <Company>Veyron</Company>
+    <Version>1.0.0</Version>
+    <AssemblyVersion>1.0.0.0</AssemblyVersion>
+    <FileVersion>1.0.0.0</FileVersion>
+    <RootNamespace>Cyclop.Windows</RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Content Include="Localization\ru-to-en.json" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest" />
+    <Content Include="Localization\windows-ru-to-en.json" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest" />
+  </ItemGroup>
+</Project>
