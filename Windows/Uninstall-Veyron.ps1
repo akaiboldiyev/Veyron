@@ -17,10 +17,6 @@ try {
     Start-Sleep -Milliseconds 500
     if (Test-Path -LiteralPath $installDir) { Remove-Item -LiteralPath $installDir -Recurse -Force }
 
-    [System.Windows.Forms.MessageBox]::Show(
-        "Veyron v1 удалён. Настройки и сохранённые файлы в %LOCALAPPDATA%\Cyclop оставлены без изменений.",
-        'Veyron v1', 'OK', 'Information'
-    ) | Out-Null
 }
 catch {
     [System.Windows.Forms.MessageBox]::Show(

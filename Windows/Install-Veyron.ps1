@@ -43,10 +43,6 @@ try {
     Set-ItemProperty -Path $runKey -Name 'Veyron' -Value ('"' + $installExe + '"')
 
     Start-Process -FilePath $installExe -WorkingDirectory $installDir
-    [System.Windows.Forms.MessageBox]::Show(
-        "Veyron v1 установлен и запущен.`r`n`r`nОткрыть его позже можно через меню «Пуск» → «Veyron v1». Приложение запускается при входе в Windows. Чтобы отключить автозапуск, используйте флажок в меню значка Veyron рядом с часами.`r`n`r`nУстановщик не добавляет сертификаты и не меняет системные настройки безопасности.",
-        'Veyron v1 установлен', 'OK', 'Information'
-    ) | Out-Null
 }
 catch {
     [System.Windows.Forms.MessageBox]::Show(
