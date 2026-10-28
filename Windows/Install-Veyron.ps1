@@ -21,12 +21,31 @@ try {
 
     New-Item -ItemType Directory -Force -Path $programs | Out-Null
     if (Test-Path -LiteralPath $installExe) {
-        Get-Process Veyron -ErrorAction SilentlyContinue | ForEach-Object {
-            try {
-                if ($_.Path -and [IO.Path]::GetFullPath($_.Path) -eq [IO.Path]::GetFullPath($installExe)) { $_.CloseMainWindow() | Out-Null }
-            } catch { }
+        $installExeFullPath = [IO.Path]::GetFullPath($installExe)
+        $runningInstances = @(Get-Process Veyron -ErrorAction SilentlyContinue | Where-Object {
+            try { $_.Path -and [IO.Path]::GetFullPath($_.Path) -eq $installExeFullPath } catch { $false }
+        })
+        foreach ($process in $runningInstances) {
+            try { $null = $process.CloseMainWindow() } catch { }
         }
-        Start-Sleep -Milliseconds 500
+
+        # Veyron normally lives in the notification area, so CloseMainWindow may
+        # not close it. Wait briefly for a normal exit, then stop only instances
+        # launched from this install directory so their files can be replaced.
+        $closeDeadline = [DateTime]::UtcNow.AddSeconds(3)
+        do {
+            $runningInstances | ForEach-Object { try { $_.Refresh() } catch { } }
+            $runningInstances = @($runningInstances | Where-Object { -not $_.HasExited })
+            if ($runningInstances.Count -eq 0) { break }
+            Start-Sleep -Milliseconds 250
+        } while ([DateTime]::UtcNow -lt $closeDeadline)
+
+        foreach ($process in $runningInstances) {
+            Stop-Process -Id $process.Id -Force -ErrorAction Stop
+        }
+        foreach ($process in $runningInstances) {
+            if (-not $process.WaitForExit(5000)) { throw 'Не удалось закрыть Veyron перед обновлением. Закройте приложение в области уведомлений и запустите установщик ещё раз.' }
+        }
     }
     New-Item -ItemType Directory -Force -Path $installDir | Out-Null
     Copy-Item -Path (Join-Path $appSource '*') -Destination $installDir -Recurse -Force
