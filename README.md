@@ -1,59 +1,48 @@
-# Veyron v1
+# Veyron v1 for Windows
 
-## ⬇️ [Скачать Veyron v1 для Windows — установщик](https://github.com/akaiboldiyev/Veyron/releases/latest/download/Veyron-v1-Installer.zip)
+## Download
 
-Эта ссылка загружает **один ZIP установщика**. Не выбирайте **Code → Download ZIP**: это архив исходников, не установщик.
+**[Download Veyron v1 — Windows installer](https://github.com/akaiboldiyev/Veyron/releases/latest/download/Veyron-v1-Installer.zip)**
 
-A Windows desktop panel based on the Cyclop project. Veyron opens from the top edge of the screen and stays in the notification area, ready when you need it.
+This is the only download button you need. The ZIP will appear in your **Downloads** folder.
 
-*English · [Русский](README.ru.md)*
+If GitHub opens a release page, scroll to **Assets** and click **Veyron-v1-Installer.zip**. Do not choose **Code → Download ZIP** or **Source code**; those are source archives, not the app.
 
-## Install without a terminal
+## Install
 
-### Download
-
-Click **[Download Veyron v1 for Windows (.zip)](https://github.com/akaiboldiyev/Veyron/releases/latest/download/Veyron-v1-Installer.zip)** to download the installer archive.
-
-Or open the [latest release page](https://github.com/akaiboldiyev/Veyron/releases/latest), find **Assets**, and click **Veyron-v1-Installer.zip**. Do not download `Install-Veyron.vbs` by itself or click **Source code**.
-
-### Install
-
-1. Open your browser's **Downloads** folder in File Explorer.
-2. Right-click `Veyron-v1-Installer.zip`, choose **Extract All…**, then click **Extract**.
+1. Open **Downloads** in File Explorer.
+2. Right-click `Veyron-v1-Installer.zip` → **Extract All…** → **Extract**.
 3. Open the new `Veyron-v1-Installer` folder.
-4. Double-click **Install-Veyron.vbs**. Leave the `App` folder beside it and wait for the success message.
-5. The installer copies Veyron into your user profile, creates a Start menu shortcut, enables launch at sign-in, and starts the app. No terminal or certificate selection is needed.
-6. To open it later, press **Start**, type **Veyron v1**, and select it. Its icon also appears beside the clock.
+4. Double-click `Install-Veyron.vbs`. Keep the `App` folder beside this file.
+5. If Windows asks whether to open the file, click **Open**. You do not need a terminal, certificate, or administrator access.
+6. Wait for Veyron to launch. Later, open it from **Start → Veyron v1**. It also starts when you sign in and stays in the notification area by the clock.
 
-If Windows asks whether to open the downloaded script, check that it is inside the extracted `Veyron-v1-Installer` folder, then choose **Open**. If the installer says the `App` folder or `Veyron.exe` is missing, repeat step 2 and run the script from the extracted folder.
+The installer closes an already-running Veyron while it updates the files, then starts it again. Installing does not erase your settings or app data.
 
-Veyron starts when you sign in to Windows. To turn that off, right-click its notification-area icon and clear **Запускать при входе в Windows**. Choose **Выход из Veyron** to close it for the current session. You can also turn startup off from **Veyron → Settings**, or in **Windows Settings → Apps → Startup**.
+## Troubleshooting
 
-To uninstall, run `Uninstall-Veyron.vbs` from the extracted installer folder or use **Windows Settings → Apps → Installed apps**. Your saved data stays in `%LOCALAPPDATA%\Cyclop`.
+- **“The file is in use by another process”**: download the latest installer from the button above. If the message appears again, right-click the Veyron icon by the clock → **Exit Veyron**, then run `Install-Veyron.vbs` again.
+- **The ZIP has no `Install-Veyron.vbs` or `App` folder**: you downloaded the source archive. Return to the **Download Veyron v1** button above and repeat steps 2–4.
+- **Windows shows a warning when opening the script**: make sure it is inside the extracted `Veyron-v1-Installer` folder, then click **Open**.
 
-The installer copies the ordinary app files into `%LOCALAPPDATA%\Programs\Veyron`. It does not install an MSIX package or add certificates to Windows.
+## Uninstall
 
-## Features
+Open the `Veyron-v1-Installer` folder and run `Uninstall-Veyron.vbs`. This removes the app, Start shortcut, and auto-start entry. Settings and user data in `%LOCALAPPDATA%\Cyclop` stay on your computer.
 
-- Yandex Music player controls and track details.
-- File shelf with drag and drop, previews, and screenshot-folder watching.
-- Persistent clipboard history and reusable text snippets.
-- Offline Russian ↔ English translation with Argos Translate.
-- Optional utilities and settings in a compact floating panel.
+## About
 
-## Requirements
+Veyron is a compact Windows panel based on Cyclop. It opens from the top edge of the screen and controls Yandex Music, the file shelf, clipboard history, text snippets, and offline RU ↔ EN translation.
 
-- Windows 10 version 1809 or newer, or Windows 11.
-- x64 Windows.
+Requires Windows 10 version 1809 or newer, or Windows 11, x64. The installer includes the app runtime; you do not need to install .NET separately.
 
-The installer includes the app runtime; end users do not need .NET or a terminal.
+### Build from source
 
-## Build from source
-
-For contributors with PowerShell and the .NET 8 SDK:
+Developers need PowerShell and the .NET 8 SDK:
 
 ```powershell
 .\Windows\Build-Windows.ps1
 ```
 
-The installer ZIP is written to `build/Windows/Veyron-v1-Installer.zip`. The project also retains the original macOS reference sources in `Sources/Cyclop`.
+The installer is created at `build/Windows/Veyron-v1-Installer.zip`. The original macOS sources are in `Sources/Cyclop`.
+
+English · [Русский](README.ru.md)

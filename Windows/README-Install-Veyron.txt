@@ -1,16 +1,23 @@
-VEYRON V1 — УСТАНОВКА БЕЗ ТЕРМИНАЛА И СЕРТИФИКАТА
+VEYRON V1 FOR WINDOWS — DOWNLOAD AND INSTALL
 
-1. Откройте страницу https://github.com/akaiboldiyev/Veyron/releases/latest.
-2. Прокрутите до раздела Assets и нажмите Veyron-v1-Installer.zip. Не нажимайте Source code.
-3. Откройте Проводник → Загрузки.
-4. Нажмите правой кнопкой на Veyron-v1-Installer.zip и выберите «Извлечь все…».
-5. В открывшемся окне нажмите «Извлечь» и дождитесь создания папки Veyron-v1-Installer.
-6. Откройте эту папку и дважды щёлкните Install-Veyron.vbs. Если Windows покажет обычный вопрос «Открыть файл?», проверьте, что файл лежит в папке Veyron-v1-Installer, и нажмите «Открыть».
-7. Дождитесь сообщения «Veyron v1 установлен». Установщик сам скопирует приложение в папку пользователя, создаст ярлык и запустит его. Вводить команды или выбирать сертификаты не нужно.
-8. Чтобы открыть приложение позже, нажмите Пуск, введите Veyron v1 и выберите приложение. Значок Veyron также находится рядом с часами.
+DOWNLOAD
+1. Click: https://github.com/akaiboldiyev/Veyron/releases/latest/download/Veyron-v1-Installer.zip
+2. If GitHub opens a release page instead, scroll to Assets and click Veyron-v1-Installer.zip.
+3. Do not click Code → Download ZIP or Source code. Those are source files, not the app.
 
-Автозапуск включён: Veyron запускается после входа в Windows. Чтобы отключить его, откройте меню значка Veyron рядом с часами и снимите флажок «Запускать при входе в Windows».
+INSTALL
+1. Open File Explorer → Downloads.
+2. Right-click Veyron-v1-Installer.zip → Extract All… → Extract.
+3. Open the extracted Veyron-v1-Installer folder.
+4. Double-click Install-Veyron.vbs. Keep the App folder beside it.
+5. If Windows asks whether to open the file, click Open.
+6. Wait for the success message and for Veyron to launch. No terminal, certificate, or administrator access is needed.
 
-Удаление: в той же распакованной папке дважды щёлкните Uninstall-Veyron.vbs. Личные настройки и файлы Cyclop в %LOCALAPPDATA%\Cyclop останутся на компьютере.
+The installer closes Veyron during an update and starts it again. To open the app later, use Start → Veyron v1 or the icon by the clock.
 
-Этот установщик копирует обычное приложение в %LOCALAPPDATA%\Programs\Veyron. Он не устанавливает MSIX, не подписан сертификатом и не добавляет сертификаты в Windows.
+TROUBLESHOOTING
+- If a file is still reported as in use, right-click the Veyron icon by the clock → Exit Veyron, then run Install-Veyron.vbs again.
+- If Install-Veyron.vbs or the App folder is missing, you downloaded the source ZIP. Download Veyron-v1-Installer.zip using the link above.
+
+UNINSTALL
+Run Uninstall-Veyron.vbs from this extracted folder. This removes the app, Start shortcut, and auto-start entry. User data in %LOCALAPPDATA%\Cyclop is kept.
