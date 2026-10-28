@@ -83,7 +83,7 @@ internal sealed class TrayIconService : IDisposable
         if (menu is null)
         {
             menu = new ContextMenu();
-            menu.Items.Add(new MenuItem { Header = $"Veyron v{typeof(TrayIconService).Assembly.GetName().Version?.ToString(3) ?? "dev"}", IsEnabled = false });
+            menu.Items.Add(new MenuItem { Header = "Veyron v1", IsEnabled = false });
             menu.Items.Add(new Separator());
             var open = new MenuItem { Header = "Открыть панель" }; open.Click += (_, _) => MainWindow.OpenFromTray(); menu.Items.Add(open);
             var startup = new MenuItem { Header = "Запускать при входе в Windows", IsCheckable = true };

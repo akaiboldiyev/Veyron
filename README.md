@@ -6,9 +6,21 @@ A Windows desktop panel based on the Cyclop project. Veyron opens from the top e
 
 ## Install without a terminal
 
-1. Download `Veyron-v1-Installer.zip` from the [Veyron v1 release](https://github.com/akaiboldiyev/Veyron/releases/latest) and extract the whole archive.
-2. Double-click `Install-Veyron.vbs`.
-3. Veyron installs for your Windows account, opens, and appears in Start as **Veyron v1**.
+### Download
+
+Click **[Download Veyron v1 for Windows (.zip)](https://github.com/akaiboldiyev/Veyron/releases/latest/download/Veyron-v1-Installer.zip)** to download the installer archive.
+
+Or open the [latest release page](https://github.com/akaiboldiyev/Veyron/releases/latest), find **Assets**, and click **Veyron-v1-Installer.zip**. Do not download `Install-Veyron.vbs` by itself or click **Source code**.
+
+### Install
+
+1. Open your browser's **Downloads** folder in File Explorer.
+2. Right-click `Veyron-v1-Installer.zip`, choose **Extract All…**, then click **Extract**.
+3. Open the new `Veyron-v1-Installer` folder.
+4. Double-click **Install-Veyron.vbs**. Keep `Veyron-v1.msix` and `Veyron-v1.cer` in the same folder.
+5. After the success message, launch Veyron from the **Start** menu. Its icon also appears in the notification area beside the clock.
+
+If Windows asks whether to run the script, choose **Open** or **Run**. If you see “Veyron-v1.msix is missing,” the ZIP was not extracted: repeat step 2 and run the script from the extracted folder.
 
 Veyron starts when you sign in to Windows. To turn that off, right-click its notification-area icon and clear **Запускать при входе в Windows**. Choose **Выход из Veyron** to close it for the current session. You can also turn startup off from **Veyron → Settings**, or in **Windows Settings → Apps → Startup**.
 
